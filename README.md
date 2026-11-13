@@ -1,6 +1,7 @@
 # Escape Buttercup Bakeshop
 
-CCT360 Project: The Curious Case
+CCT360 Project: The Curious Case.
+
 You wake up locked inside Buttercup Bakeshop after closing, and the bakery's famous Rainbow Cake recipe has been stolen. Search five rooms, collect items, solve puzzles, gather clues, accuse the thief and escape.
 
 ## How to run it
