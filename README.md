@@ -1,8 +1,7 @@
 # Escape Buttercup Bakeshop
 
 CCT360 Project: The Curious Case
-
-A cute point and click escape mystery. You wake up locked inside Buttercup Bakeshop after closing, and the bakery's famous Rainbow Cake recipe has been stolen. Search five rooms, collect items, solve puzzles, gather clues, accuse the thief and escape.
+You wake up locked inside Buttercup Bakeshop after closing, and the bakery's famous Rainbow Cake recipe has been stolen. Search five rooms, collect items, solve puzzles, gather clues, accuse the thief and escape.
 
 ## How to run it
 
@@ -64,5 +63,4 @@ The front door key is in the frozen cake. The thief is Emma Davis, the cashier.
 
 ## Credits
 
-- Fonts: Fredoka and Nunito from Google Fonts, SIL Open Font License.
-- Course notes: CCT360 Classes 4 to 7 (variables and functions, conditionals, arrays and loops, media).
+- Fonts: Google Fonts
