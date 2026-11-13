@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Buttercup Bakeshop</title>
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== TOP BAR ========== -->
+  <header class="topbar">
+    <h1 class="logo">Escape <span>Buttercup Bakeshop</span></h1>
+    <p class="room-name" id="room-name">Welcome</p>
+    <div class="tools">
+      <button class="tool-btn" id="hint-btn">Hint</button>
+      <button class="tool-btn" id="notebook-btn">Clues <b id="clue-count">0/8</b></button>
+      <button class="tool-btn" id="sound-btn">Sound on</button>
+      <a class="tool-btn" href="index.html">Restart</a>
+    </div>
+  </header>
+
+  <!-- ========== GAME ========== -->
+  <main class="game" id="game">
+
+    <!-- ===== START SCREEN ===== -->
+    <section class="scene" id="start">
+      <img class="room-img" src="assets/images/screen-start.png" alt="Buttercup Bakeshop at night, door padlocked">
+      <div class="card">
+        <h2>Escape<br><span>Buttercup Bakeshop</span></h2>
+        <p>You fell asleep on a stool at your favourite bakery. Now it's almost midnight, every door is locked, and the bakery's famous <strong>Rainbow Cake recipe</strong> has been stolen.</p>
+        <p>Find a way out. Solve the case. Don't blame the wrong person.</p>
+        <button class="big-btn" id="play-btn">Play</button>
+      </div>
+    </section>
+
+    <!-- ===== FRONT COUNTER ===== -->
+    <section class="scene room" id="counter">
+      <img class="room-img" src="assets/images/room-counter.png" alt="Front Counter">
+      <img class="patch" id="patch-receipt" src="assets/images/patch-counter-receipt.png" alt="" style="left:57.19%; top:44.44%; width:2.75%; height:8.44%;">
+      <button class="spot" id="counter-kitchen-door" title="Kitchen" style="left:2.50%; top:23.89%; width:15.62%; height:46.67%;">Kitchen</button>
+      <button class="spot" id="counter-pantry-door" title="Pantry" style="left:82.50%; top:23.89%; width:15.62%; height:46.67%;">Pantry</button>
+      <button class="spot" id="counter-exit-door" title="Exit" style="left:66.56%; top:21.67%; width:14.37%; height:48.89%;">Exit</button>
+      <button class="spot" id="counter-register" title="Cash register" style="left:48.75%; top:42.78%; width:11.25%; height:19.44%;">Cash register</button>
+      <button class="spot look" title="Tip jar" style="left:57.81%; top:50.67%; width:6.88%; height:11.67%;">Two coins and a button. No clues in here.</button>
+      <button class="spot look" title="Display case" style="left:20.62%; top:46.67%; width:20.62%; height:15.78%;">Cupcakes, cookies and a donut. Focus! You need to get out of here.</button>
+      <button class="spot look" title="Menu board" style="left:20.00%; top:27.78%; width:12.50%; height:18.89%;">Rainbow Cake, $9. The bakery's famous secret recipe. Everyone in Ontario wants it.</button>
+      <button class="spot look" title="Clock" style="left:56.56%; top:28.33%; width:6.88%; height:12.22%;">11:52 PM. The bakery closed almost three hours ago.</button>
+      <button class="spot" id="counter-bell" title="Service bell" style="left:18.25%; top:56.89%; width:4.75%; height:5.56%;">Service bell</button>
+      <button class="spot look" title="Stool" style="left:8.12%; top:77.22%; width:8.75%; height:15.56%;">Your stool. The last thing you remember is Emma saying "Don't worry, I'll lock up tonight."</button>
+    </section>
+
+    <!-- ===== KITCHEN ===== -->
+    <section class="scene room" id="kitchen">
+      <img class="room-img" src="assets/images/room-kitchen.png" alt="Kitchen">
+      <img class="patch" id="patch-recipe-scrap" src="assets/images/patch-kitchen-recipe-scrap.png" alt="" style="left:64.56%; top:55.56%; width:4.50%; height:6.11%;">
+      <button class="spot" id="kitchen-freezer-door" title="Freezer" style="left:2.50%; top:23.89%; width:16.25%; height:46.67%;">Freezer</button>
+      <button class="spot" id="kitchen-office-door" title="Office" style="left:81.25%; top:23.89%; width:16.25%; height:46.67%;">Office</button>
+      <button class="spot look" title="Drawer" style="left:23.12%; top:65.78%; width:9.06%; height:5.56%;">Spoons, forks and one very sad whisk.</button>
+      <button class="spot" id="kitchen-drawer-right" title="Drawer" style="left:33.12%; top:65.78%; width:9.06%; height:5.56%;">Drawer</button>
+      <button class="spot look" title="Cupboards" style="left:59.06%; top:72.89%; width:19.06%; height:16.44%;">Pots, pans and baking trays. Nothing useful.</button>
+      <button class="spot" id="kitchen-bowl" title="Mixing bowl" style="left:64.69%; top:48.89%; width:11.25%; height:12.22%;">Mixing bowl</button>
+      <button class="spot" id="kitchen-oven" title="Oven" style="left:43.12%; top:64.44%; width:15.00%; height:26.11%;">Oven</button>
+      <button class="spot look" title="Pot" style="left:46.25%; top:45.56%; width:8.75%; height:15.11%;">Still warm. Someone was cooking here not long ago.</button>
+      <button class="spot look" title="Window" style="left:24.38%; top:26.67%; width:16.25%; height:21.11%;">It's pitch black outside. The window is painted shut.</button>
+      <button class="spot look" title="Flour" style="left:76.25%; top:50.67%; width:3.50%; height:10.00%;">Flour. There is flour on everything in this bakery.</button>
+      <button class="spot look" title="Cookbooks" style="left:61.56%; top:28.67%; width:16.88%; height:9.78%;">Cookbooks. None of them have the Rainbow Cake recipe. That one was kept in the office safe.</button>
+      <button class="back-btn" id="kitchen-back">&larr; Front Counter</button>
+    </section>
+
+    <!-- ===== PANTRY ===== -->
+    <section class="scene room" id="pantry">
+      <img class="room-img" src="assets/images/room-pantry.png" alt="Pantry">
+      <img class="patch" id="patch-freezer-key" src="assets/images/patch-pantry-freezer-key.png" alt="" style="left:51.69%; top:74.56%; width:4.38%; height:7.33%;">
+      <button class="spot" id="pantry-sack" title="Flour sack" style="left:46.25%; top:57.78%; width:8.75%; height:24.44%;">Flour sack</button>
+      <button class="spot look" title="Flour sack" style="left:38.12%; top:61.56%; width:7.81%; height:20.67%;">Just flour. Lots and lots of flour.</button>
+      <button class="spot look" title="Flour sack" style="left:55.00%; top:63.11%; width:7.50%; height:19.11%;">More flour. Achoo!</button>
+      <button class="spot" id="pantry-board" title="Notice board" style="left:41.25%; top:21.11%; width:17.50%; height:22.22%;">Notice board</button>
+      <button class="spot look" title="Jars" style="left:6.88%; top:21.33%; width:24.38%; height:12.00%;">A heart, a star, a moon and a flower. Cute labels, but it's just sugar and sprinkles inside.</button>
+      <button class="spot look" title="Flavours" style="left:67.50%; top:22.89%; width:25.62%; height:10.44%;">Cherry, mint, peach, cocoa and vanilla. It smells amazing in here.</button>
+      <button class="spot look" title="Cookie cutters" style="left:76.56%; top:43.89%; width:15.31%; height:7.78%;">A heart, a star and a circle. No keys hiding in these.</button>
+      <button class="spot look" title="Apples" style="left:63.12%; top:76.67%; width:8.75%; height:12.22%;">Fresh apples for tomorrow's pies.</button>
+      <button class="spot look" title="Light bulb" style="left:48.12%; top:6.67%; width:4.38%; height:8.89%;">The bulb is burnt out. That's why it's so dark in here.</button>
+      <div id="darkness"></div>
+      <div id="light"></div>
+      <button class="back-btn" id="pantry-back">&larr; Front Counter</button>
+    </section>
+
+    <!-- ===== FREEZER ===== -->
+    <section class="scene room" id="freezer">
+      <img class="room-img" src="assets/images/room-freezer.png" alt="Freezer">
+      <img class="patch" id="patch-door-key" src="assets/images/patch-freezer-door-key.png" alt="" style="left:54.62%; top:50.11%; width:6.44%; height:6.89%;">
+      <img class="patch" id="patch-name-tag" src="assets/images/patch-freezer-name-tag.png" alt="" style="left:16.38%; top:79.78%; width:8.50%; height:9.33%;">
+      <img class="patch" id="patch-recipe" src="assets/images/patch-freezer-recipe.png" alt="" style="left:73.31%; top:35.89%; width:13.38%; height:12.33%;">
+      <button class="spot" id="freezer-cake" title="Frozen cake" style="left:42.50%; top:43.89%; width:18.12%; height:19.44%;">Frozen cake</button>
+      <button class="spot" id="freezer-ice" title="Ice block" style="left:73.75%; top:36.67%; width:12.50%; height:13.33%;">Ice block</button>
+      <button class="spot" id="freezer-name-tag" title="Something pink" style="left:15.94%; top:78.33%; width:9.38%; height:11.11%;">Something pink</button>
+      <button class="spot look" title="Thermometer" style="left:46.25%; top:15.56%; width:7.50%; height:13.33%;">-18°. Brrr. Don't stay in here too long.</button>
+      <button class="spot look" title="Ice cream" style="left:6.25%; top:22.78%; width:26.88%; height:10.00%;">Strawberry, mint, mango and chocolate ice cream.</button>
+      <button class="spot look" title="Butter" style="left:6.25%; top:42.78%; width:8.12%; height:7.78%;">Frozen butter. Hard as a brick.</button>
+      <button class="spot look" title="Popsicles" style="left:67.19%; top:20.00%; width:10.62%; height:12.22%;">Popsicles. Tempting, but no.</button>
+      <button class="back-btn" id="freezer-back">&larr; Kitchen</button>
+    </section>
+
+    <!-- ===== BACK OFFICE ===== -->
+    <section class="scene room" id="office">
+      <img class="room-img" src="assets/images/room-office.png" alt="Back Office">
+      <img class="patch" id="patch-space-heater" src="assets/images/patch-office-space-heater.png" alt="" style="left:47.75%; top:78.22%; width:7.00%; height:11.33%;">
+      <button class="spot" id="office-board" title="Who did it?" style="left:4.38%; top:14.44%; width:27.50%; height:35.56%;">Who did it?</button>
+      <button class="spot" id="office-monitor" title="Camera screen" style="left:43.12%; top:37.78%; width:15.00%; height:17.78%;">Camera screen</button>
+      <button class="spot" id="office-safe" title="Safe" style="left:73.12%; top:47.78%; width:17.50%; height:41.11%;">Safe</button>
+      <button class="spot" id="office-footprints" title="Footprints" style="left:62.50%; top:87.78%; width:14.37%; height:12.22%;">Footprints</button>
+      <button class="spot" id="office-slip" title="Paper" style="left:63.44%; top:54.22%; width:4.88%; height:5.56%;">Paper</button>
+      <button class="spot" id="office-heater" title="Space heater" style="left:47.81%; top:78.33%; width:6.88%; height:11.11%;">Space heater</button>
+      <button class="spot" id="office-cardigan" title="Cardigan" style="left:19.88%; top:48.44%; width:10.31%; height:20.00%;">Cardigan</button>
+      <button class="spot look" title="Certificate" style="left:40.00%; top:17.78%; width:11.25%; height:15.56%;">Best Bakery Ontario 2026. No wonder someone wanted that recipe.</button>
+      <button class="spot look" title="Binders" style="left:73.75%; top:23.33%; width:17.50%; height:10.22%;">Order forms and old receipts. Boring.</button>
+      <button class="spot look" title="Filing cabinet" style="left:5.62%; top:53.33%; width:10.62%; height:21.11%;">Locked. Probably just tax papers anyway.</button>
+      <button class="back-btn" id="office-back">&larr; Kitchen</button>
+    </section>
+
+    <!-- ===== ENDING ===== -->
+    <section class="scene" id="ending">
+      <img class="room-img" id="end-img" src="assets/images/screen-best.png" alt="Buttercup Bakeshop at sunrise">
+      <div class="card">
+        <p class="tag" id="end-tag">Ending</p>
+        <h2 id="end-title">Case closed!</h2>
+        <p id="end-text"></p>
+        <p class="stats">Clues found: <b id="end-clues">0/8</b> &nbsp; Items found: <b id="end-items">0/9</b></p>
+        <a class="big-btn" href="index.html">Play again</a>
+      </div>
+    </section>
+
+    <!-- ===== MESSAGE BUBBLE ===== -->
+    <div class="message" id="message">
+      <p id="message-text"></p>
+    </div>
+
+  </main>
+
+  <!-- ========== BAG ========== -->
+  <footer class="bag" id="bag">
+    <p class="bag-title">Your bag</p>
+    <div class="slots">
+      <div class="slot"></div><div class="slot"></div><div class="slot"></div>
+      <div class="slot"></div><div class="slot"></div><div class="slot"></div>
+      <div class="slot"></div><div class="slot"></div><div class="slot"></div>
+    </div>
+  </footer>
+
+  <!-- ========== POP UP WINDOWS ========== -->
+  <div class="overlay" id="overlay">
+
+    <!-- oven -->
+    <div class="popup" id="oven-popup">
+      <button class="close-btn">X</button>
+      <h3>The Oven</h3>
+      <p>The oven has a temperature dial. There's a tray of cookies inside.</p>
+      <p class="screen-display" id="oven-display">0°</p>
+      <button class="dial-btn" id="oven-down">-</button>
+      <button class="big-btn" id="oven-bake">Bake</button>
+      <button class="dial-btn" id="oven-up">+</button>
+      <p class="small">Each press changes it by 25°.</p>
+    </div>
+
+    <!-- keypad -->
+    <div class="popup" id="keypad-popup">
+      <button class="close-btn">X</button>
+      <h3>Office Keypad</h3>
+      <p>STAFF ONLY. Enter the 4 digit code.</p>
+      <p class="screen-display" id="keypad-display">____</p>
+      <div class="keypad">
+        <button class="key">1</button>
+        <button class="key">2</button>
+        <button class="key">3</button>
+        <button class="key">4</button>
+        <button class="key">5</button>
+        <button class="key">6</button>
+        <button class="key">7</button>
+        <button class="key">8</button>
+        <button class="key">9</button>
+        <button class="key-clear" id="key-clear">C</button>
+        <button class="key">0</button>
+        <button class="key-enter" id="key-enter">OK</button>
+      </div>
+    </div>
+
+    <!-- notebook -->
+    <div class="popup" id="notebook-popup">
+      <button class="close-btn">X</button>
+      <h3>Clue Notebook</h3>
+      <ul class="clue-list">
+        <li>
+          <span class="unknown" id="unknown-receipt"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-receipt"><strong>Late night receipt</strong> The register printed a $47.50 sale at 11:47 PM. The bakery closes at 9. <em>Points to Emma</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-camera"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-camera"><strong>Security camera</strong> CAM 1 shows a blurry person with a ponytail at the counter at 11:47 PM. <em>Points to Emma</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-name-tag"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-name-tag"><strong>Name tag in the freezer</strong> Emma's name tag was on the freezer floor, near where the recipe was hidden. <em>Points to Emma</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-glitter"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-glitter"><strong>Glitter on the safe</strong> Pink glitter nail polish is smudged by the safe dial. Emma wears pink glitter polish. <em>Points to Emma</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-cardigan"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-cardigan"><strong>Sparkly pink cardigan</strong> A glittery pink cardigan is hanging in the office. Very Emma. <em>Points to Emma</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-footprints"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-footprints"><strong>Floury footprints</strong> Flour footprints lead to the safe. Vanessa is always covered in flour, but so is anyone who walked through the pantry. <em>Points to Vanessa</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-slip"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-slip"><strong>Delivery slip</strong> Daniel's delivery slip is signed at 9:02 PM. He left hours before the theft. <em>Clears Daniel</em></span>
+        </li>
+        <li>
+          <span class="unknown" id="unknown-shifts"><strong>???</strong> Not found yet.</span>
+          <span class="found" id="clue-shifts"><strong>Shift list</strong> Friday close: Emma. Saturday open: Vanessa. Delivery: Daniel at 9 PM. <em>Points to Emma</em></span>
+        </li>
+      </ul>
+      <p id="accused-note">You haven't accused anyone yet.</p>
+    </div>
+
+    <!-- accuse -->
+    <div class="popup" id="accuse-popup">
+      <button class="close-btn">X</button>
+      <h3>Who did it?</h3>
+      <p>Who stole the Rainbow Cake recipe? Pin your suspect, then escape through the front door.</p>
+      <div class="suspects">
+        <button class="suspect" id="accuse-emma"><img src="assets/images/suspect-emma.png" alt="Emma Davis"><span>Cashier</span></button>
+        <button class="suspect" id="accuse-vanessa"><img src="assets/images/suspect-vanessa.png" alt="Vanessa Brown"><span>Baker's assistant</span></button>
+        <button class="suspect" id="accuse-daniel"><img src="assets/images/suspect-daniel.png" alt="Daniel John"><span>Delivery driver</span></button>
+      </div>
+    </div>
+
+    <!-- leave without accusing -->
+    <div class="popup" id="leave-popup">
+      <button class="close-btn">X</button>
+      <h3>Leave now?</h3>
+      <p id="leave-text">You can unlock the door, but you haven't named the thief yet.</p>
+      <button class="big-btn light" id="stay-btn">Keep looking</button>
+      <button class="big-btn" id="leave-btn">Unlock the door</button>
+    </div>
+
+  </div>
+
+  <!-- ========== SOUNDS ========== -->
+  <audio id="sfx-click" src="assets/audio/click.mp3"></audio>
+  <audio id="sfx-pickup" src="assets/audio/pickup.mp3"></audio>
+  <audio id="sfx-unlock" src="assets/audio/unlock.mp3"></audio>
+  <audio id="sfx-wrong" src="assets/audio/wrong.mp3"></audio>
+  <audio id="sfx-ding" src="assets/audio/ding.mp3"></audio>
+  <audio id="sfx-clue" src="assets/audio/clue.mp3"></audio>
+  <audio id="sfx-win" src="assets/audio/win.mp3"></audio>
+  <audio id="music" src="assets/media/music.mp3" loop></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
