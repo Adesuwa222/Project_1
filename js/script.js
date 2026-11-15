@@ -1,7 +1,6 @@
 /* =========================================================
    ESCAPE BUTTERCUP BAKESHOP
    CCT360 Project: The Curious Case
-
   */
 
 
