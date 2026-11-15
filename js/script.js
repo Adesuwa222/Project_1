@@ -2,33 +2,26 @@
    ESCAPE BUTTERCUP BAKESHOP
    CCT360 Project: The Curious Case
 
-   Uses: variables, functions, booleans, if / else if / else,
-   relational and logical operators, arrays (push, length),
-   for loops, getElementById, getElementsByClassName,
-   innerHTML, style, addEventListener, mouse clientX and
-   clientY, and the audio play(), pause() and currentTime.
-   ========================================================= */
+  */
 
 
-/* ---------- 1. VARIABLES (what the game remembers) ---------- */
+/* ---------- 1. VARIABLES --- */
 
-let inventory = [];        // items in your bag, e.g. "flashlight"
-let clues = [];            // clues in your notebook, e.g. "receipt"
-let accused = "";          // "emma", "vanessa" or "daniel"
-let accusedName = "";      // their full name, e.g. "Emma Davis"
+let inventory = [];         
+let clues = [];             
+let accused = "";           
+let accusedName = "";       
 let currentRoom = "start";
 
 let freezerOpen = false;   // booleans: true or false
 let officeOpen = false;
 let soundOn = true;
 
-let temperature = 0;       // oven puzzle
-let code = "";             // keypad puzzle
+let temperature = 0;       
+let code = "";              
 
 
 /* ---------- 2. HELPER FUNCTIONS ---------- */
-
-// is this item in the bag? loops through the array to check
 function hasItem(name) {
   for (let i = 0; i < inventory.length; i++) {
     if (inventory[i] === name) {
@@ -556,7 +549,6 @@ document.getElementById("sound-btn").addEventListener("click", function () {
   }
 });
 
-// HINTS: checks the puzzles in order and gives the next step
 document.getElementById("hint-btn").addEventListener("click", function () {
   playSound("click");
 
